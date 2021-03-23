@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 01:56:00 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/24 01:56:58 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/24 02:12:30 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	put_error(void)
 {
 	ft_putendl_fd("Error", 2);
-	return (1);
+	return (EXIT_FAILURE);
 }
