@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   put_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/24 01:59:47 by kefujiwa         ###   ########.fr       */
+/*   Created: 2021/03/24 01:56:00 by kefujiwa          #+#    #+#             */
+/*   Updated: 2021/03/24 01:56:58 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "utils.h"
 
-/*
-** SELF-MADE HEADER FILES
-*/
-# include "libft.h"
-
-/*
-** EXTERNAL LIBRARIES
-*/
-# include <limits.h>
-# include <stdlib.h>
-
-/*
-** PROTOTYPE DECLARATION
-*/
-is_valid_args(char **argv);
-put_error(void);
-
-#endif
+int	put_error(void)
+{
+	ft_putendl_fd("Error", 2);
+	return (1);
+}
