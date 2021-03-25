@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 23:33:53 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 23:41:01 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:09:52 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	check_result(t_list **a, t_list **b)
 	lst = *a;
 	while (lst)
 	{
-		if ((int)lst->data > (int)lst->next->data)
-			return (ft_putendl_fd("KO", 1);
+		if ((int)lst->content > (int)lst->next->content)
+			return (ft_putendl_fd("KO", 1));
 		lst = lst->next;
 	}
 	if (*b)

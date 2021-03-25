@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:24:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 22:48:29 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:06:43 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	swap(t_list **lst)
 	t_list	*first;
 	t_list	*second;
 
-	first = *lst1;
+	first = *lst;
 	second = first->next;
 	first->next = second->next;
 	second->next = first;

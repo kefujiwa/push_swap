@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/24 01:59:47 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/25 23:47:49 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 /*
 ** PROTOTYPE DECLARATION
 */
-is_valid_args(char **argv);
-put_error(void);
+int	is_valid_args(char **argv);
+int	put_error(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/24 17:31:07 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:04:42 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	is_instruction(char *str)
 	const char	*instructions[] = {
 		"sa", "sb", "ss", "pa", "pb", "ra", "rb", "rr", "rra", "rrb", "rrr"};
 
+	i = 0;
 	while (instructions[i])
 	{
 		if (str && !ft_strcmp(instructions[i], str))
@@ -29,14 +30,14 @@ static int	is_instruction(char *str)
 
 static int	init_list(t_list **a, t_list **b, t_list **inst, char **argv)
 {
-	char	*line;
-	int		ret;
+	char		*line;
+	int			ret;
 
 	*a = NULL;
 	*b = NULL;
 	*inst = NULL;
 	while (*argv)
-		ft_lstadd_back(a, ft_lstnew(ft_atoi(*argv++)));
+		ft_lstadd_back(a, ft_lstnew((void *)(intptr_t)ft_atoi(*argv++)));
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
 		if (!is_instruction(line))
@@ -45,6 +46,7 @@ static int	init_list(t_list **a, t_list **b, t_list **inst, char **argv)
 	}
 	if (ret == -1)
 		return (EXIT_FAILURE);
+	return (0);
 }
 
 int			main(int argc, char **argv)
@@ -57,11 +59,12 @@ int			main(int argc, char **argv)
 		return (EXIT_SUCCESS);
 	if (!is_valid_args(argv))
 		return (put_error());
-	init_list(&a, &b, &inst, argv);
+	if (init_list(&a, &b, &inst, argv) == EXIT_FAILURE)
+		return (put_error());
 	perform_instruction(&a, &b, inst);
 	check_result(&a, &b);
-	ft_lstclear(a, NULL);
-	ft_lstclear(b, NULL);
-	ft_lstclear(inst, free);
+	ft_lstclear(&a, NULL);
+	ft_lstclear(&b, NULL);
+	ft_lstclear(&inst, free);
 	return (EXIT_SUCCESS);
 }

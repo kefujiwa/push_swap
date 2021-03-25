@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 23:52:29 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:02:24 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ** SELF-MADE HEADER FILES
 */
 # include "utils.h"
+# include "stdint.h"
 
 /*
 ** PROTOTYPE DECLARATION

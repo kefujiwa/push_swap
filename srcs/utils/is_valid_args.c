@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:15:52 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 22:18:44 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:08:11 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	within_range(char *str, int is_negative)
 			num = num * 10 + (*str = '0');
 		else
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }
@@ -57,15 +57,16 @@ static int	is_numeric(char *str)
 	}
 	ret = within_range(num, is_negative);
 	return (ret);
+}
 
 int	is_valid_args(char **argv)
 {
-	char	**tmp
+	char	**tmp;
 
 	argv++;
 	while (*argv)
 	{
-		if (!is_numeric(*argv));
+		if (!is_numeric(*argv))
 			return (0);
 		tmp = argv;
 		while (*tmp)
