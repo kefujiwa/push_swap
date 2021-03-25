@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   rotate_s.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 23:14:54 by kefujiwa         ###   ########.fr       */
+/*   Created: 2021/03/25 22:57:36 by kefujiwa          #+#    #+#             */
+/*   Updated: 2021/03/25 23:10:07 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "checker.h"
 
-/*
-** SELF-MADE HEADER FILES
-*/
-# include "utils.h"
+static void	rotate(t_list **lst)
+{
+	t_list	tmp;
 
-/*
-** PROTOTYPE DECLARATION
-*/
-void	perform_instruction(t_list **a, t_list **b, t_list *inst);
-void	push(t_list **dst, t_list **src);
-void	rotate_s(t_list **lst1, t_list **lst2);
-void	swap_s(t_list **lst1, t_list **lst2);
+	tmp = *lst;
+	*lst = tmp->next;
+	tmp->next = NULL;
+	ft_lstadd_back(lst, tmp);
+}
 
-#endif
+void		rotate_s(t_list **lst1, t_list **lst2)
+{
+	if (lst1 && *lst1)
+		rotate(lst1);
+	if (lst2 && *lst2)
+		rotate(lst2);
+}
