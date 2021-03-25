@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/24 17:43:51 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/25 21:41:35 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 /*
 ** PROTOTYPE DECLARATION
 */
+void	perform_instruction(t_list **a, t_list **b, t_list *inst);
 
 #endif
