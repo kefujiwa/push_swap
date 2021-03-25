@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 23:13:11 by kefujiwa         ###   ########.fr       */
+/*   Created: 2021/03/25 22:51:45 by kefujiwa          #+#    #+#             */
+/*   Updated: 2021/03/25 22:55:34 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "checker.h"
 
-/*
-** SELF-MADE HEADER FILES
-*/
-# include "utils.h"
+void	push(t_list **dst, t_list **src)
+{
+	t_list	*tmp;
 
-/*
-** PROTOTYPE DECLARATION
-*/
-void	perform_instruction(t_list **a, t_list **b, t_list *inst);
-void	push(t_list **dst, t_list **src);
-void	swap_s(t_list **lst1, t_list **lst2);
-
-#endif
+	if (!src || !*src)
+		return ;
+	tmp = *src;
+	*src = tmp->next;
+	tmp->next = *dst;
+	*dst = tmp;
+}

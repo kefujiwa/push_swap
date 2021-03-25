@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 22:45:58 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/25 22:55:49 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static void	check_instruction(t_list **a, t_list **b, t_list *inst)
 	else if (!ft_strcmp((char *)inst->data, "ss"))
 		swap_s(a, b);
 	else if (!ft_strcmp((char *)inst->data, "pa"))
-		push(a);
+		push(a, b);
 	else if (!ft_strcmp((char *)inst->data, "pb"))
-		push(b);
+		push(b, a);
 	else if (!ft_strcmp((char *)inst->data, "ra"))
 		rotate_s(a, NULL);
 	else if (!ft_strcmp((char *)inst->data, "rb"))
