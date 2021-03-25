@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:15:52 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/24 01:24:03 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/25 22:18:44 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ static int	is_numeric(char *str)
 	int		ret;
 
 	is_negative = 0;
-	if (*str == '-' || *str == '+')
+	if (*str == '-')
 	{
-		is_negative = (*str == '-' ? 1 : 0);
+		is_negative = 1;
 		str++;
 	}
 	if (!*str)
