@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 22:04:19 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/25 22:45:58 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 static void	check_instruction(t_list **a, t_list **b, t_list *inst)
 {
 	if (!ft_strcmp((char *)inst->data, "sa"))
-		swap_a(a, b);
+		swap_s(a, NULL);
 	else if (!ft_strcmp((char *)inst->data, "sb"))
-		swap_b(a, b);
+		swap_s(b, NULL);
 	else if (!ft_strcmp((char *)inst->data, "ss"))
 		swap_s(a, b);
 	else if (!ft_strcmp((char *)inst->data, "pa"))
-		push_a(a, b);
+		push(a);
 	else if (!ft_strcmp((char *)inst->data, "pb"))
-		push_b(a, b);
+		push(b);
 	else if (!ft_strcmp((char *)inst->data, "ra"))
-		rotate_a(a, b);
+		rotate_s(a, NULL);
 	else if (!ft_strcmp((char *)inst->data, "rb"))
-		rotate_b(a, b);
+		rotate_s(a, NULL);
 	else if (!ft_strcmp((char *)inst->data, "rr"))
 		rotate_s(a, b);
 	else if (!ft_strcmp((char *)inst->data, "rra"))
-		reverse_rotate_a(a, b);
+		reverse_rotate_r(a, NULL);
 	else if (!ft_strcmp((char *)inst->data, "rrb"))
-		reverse_rotate_a(a, b);
+		reverse_rotate_r(b, NULL);
 	else if (!ft_strcmp((char *)inst->data, "rrr"))
-		reverse_rotate_a(a, b);
+		reverse_rotate_r(a, b);
 }
 
 void		perform_instruction(t_list **a, t_list **b, t_list *inst)
