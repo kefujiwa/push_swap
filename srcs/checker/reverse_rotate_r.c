@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   reverse_rotate_r.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/25 23:30:53 by kefujiwa         ###   ########.fr       */
+/*   Created: 2021/03/25 23:17:24 by kefujiwa          #+#    #+#             */
+/*   Updated: 2021/03/25 23:29:12 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "checker.h"
 
-/*
-** SELF-MADE HEADER FILES
-*/
-# include "utils.h"
+static void	reverse_rotate(t_list **lst)
+{
+	t_list	tmp;
 
-/*
-** PROTOTYPE DECLARATION
-*/
-void	perform_instruction(t_list **a, t_list **b, t_list *inst);
-void	push(t_list **dst, t_list **src);
-void	reverse_rotate_r(t_list **lst1, t_list **lst2);
-void	rotate_s(t_list **lst1, t_list **lst2);
-void	swap_s(t_list **lst1, t_list **lst2);
+	tmp = ft_lstlast(*lst);
+	ft_lstadd_front(lst, tmp);
+}
 
-#endif
+void		reverse_rotate_r(t_list **lst1, t_list **lst2)
+{
+	if (lst1 && *lst1)
+		reverse_rotate(lst1);
+	if (lst2 && *lst2)
+		reverse_rotate(lst2);
+}
