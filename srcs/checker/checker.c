@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 13:33:11 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 13:46:40 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static int	is_instruction(char *str)
 	while (instructions[i])
 	{
 		if (str && !ft_strcmp(instructions[i], str))
-			return (1);
+			return (VALID);
 		i++;
 	}
-	return (0);
+	return (INVALID);
 }
 
 static int	init_list(t_list **a, t_list **b, t_list **inst, char **argv)
@@ -41,12 +41,12 @@ static int	init_list(t_list **a, t_list **b, t_list **inst, char **argv)
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
 		if (!is_instruction(line))
-			return (EXIT_FAILURE);
+			return (INVALID);
 		ft_lstadd_back(inst, ft_lstnew(line));
 	}
 	if (ret == -1)
-		return (EXIT_FAILURE);
-	return (0);
+		return (INVALID);
+	return (VALID);
 }
 
 int			main(int argc, char **argv)
