@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 23:29:51 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 23:44:21 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,6 @@
 # define BRED    "\x1b[41m"
 # define BGREEN  "\x1b[42m"
 # define BYELLOW "\x1b[43m"
-/*
-** MACRO DECLARATION - DRAWING SPEED
-*/
-# define WAIT (10000000 / 2)
 
 /*
 ** PROTOTYPE DECLARATION

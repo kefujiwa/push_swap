@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:26:27 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 21:52:24 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 23:45:48 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,5 @@ void		draw_process(t_list *a, t_list *b, t_list *inst)
 	draw_header(cnt, inst);
 	draw_lst(a, b);
 	draw_footer(a, b);
+	usleep(1.5 * 100000);
 }
