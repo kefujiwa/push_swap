@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 13:52:54 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 20:20:51 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	init_list(t_list **a, t_list **b, t_list **inst, char **argv)
 	*b = NULL;
 	*inst = NULL;
 	while (*argv)
-		ft_lstadd_back(a, ft_lstnew((void *)(intptr_t)ft_atoi(*argv++)));
+		ft_lstadd_back(a, ft_lstnew(*argv++));
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
 		if (!is_instruction(line))
