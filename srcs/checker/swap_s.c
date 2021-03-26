@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:24:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 00:06:43 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 00:49:46 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ static void	swap(t_list **lst)
 	*lst = second;
 }
 
-void		swap_s(t_list **lst1, t_list **lst2)
+int			swap_s(t_list **lst1, t_list **lst2)
 {
 	if (lst1 && *lst1 && (*lst1)->next)
 		swap(lst1);
 	if (lst2 && *lst2 && (*lst2)->next)
 		swap(lst2);
+	return (VALID);
 }

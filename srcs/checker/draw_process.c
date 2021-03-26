@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:26:27 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 23:45:48 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 00:53:12 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ static void	draw_instructions(void)
 	ft_putstr_fd(ESC"[15;26H""> EOF => Ctrl + D\n", 1);
 }
 
-static void	draw_header(int cnt, t_list *inst)
+static void	draw_header(int cnt, char *line)
 {
 	ft_putstr_fd(ESC"[1;1H", STDERR_FILENO);
-	if (cnt)
+	if (line)
 	{
-		ft_putstr_fd((char *)inst->content, STDERR_FILENO);
+		ft_putstr_fd(line, STDERR_FILENO);
 		ft_putstr_fd("  ", STDERR_FILENO);
 	}
 	ft_putnbr_fd(cnt, STDERR_FILENO);
@@ -86,15 +86,14 @@ static void	draw_footer(t_list *a, t_list *b)
 		ft_putstr_fd(ESC"[17;1H", STDERR_FILENO);
 }
 
-void		draw_process(t_list *a, t_list *b, t_list *inst)
+void		draw_process(t_list *a, t_list *b, char *line)
 {
 	static int	cnt = -1;
 
 	cnt++;
 	ft_putstr_fd(CLEAR, STDERR_FILENO);
 	draw_instructions();
-	draw_header(cnt, inst);
+	draw_header(cnt, line);
 	draw_lst(a, b);
 	draw_footer(a, b);
-	usleep(1.5 * 100000);
 }

@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 23:17:24 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 13:33:26 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 00:50:31 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ static void	reverse_rotate(t_list **lst)
 	ft_lstadd_front(lst, last);
 }
 
-void		reverse_rotate_r(t_list **lst1, t_list **lst2)
+int			reverse_rotate_r(t_list **lst1, t_list **lst2)
 {
 	if (lst1 && *lst1 && (*lst1)->next)
 		reverse_rotate(lst1);
 	if (lst2 && *lst2 && (*lst2)->next)
 		reverse_rotate(lst2);
+	return (VALID);
 }
