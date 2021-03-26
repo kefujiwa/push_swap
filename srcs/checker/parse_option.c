@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 12:11:08 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 13:29:31 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 21:57:42 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	parse_option(int *flag, char **argv)
 	while (argv && *argv && **argv == '-')
 	{
 		str = *argv + 1;
+		if (ft_isdigit(*str))
+			return (VALID);
 		while (*str)
 		{
 			if (*str == 'v')
