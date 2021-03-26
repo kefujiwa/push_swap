@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 20:20:51 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 22:40:29 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int			main(int argc, char **argv)
 	if (!init_list(&a, &b, &inst, argv))
 		return (put_error());
 	perform_instruction(&a, &b, inst, flag);
-	check_result(&a, &b);
+	check_result(&a, &b, flag);
 	ft_lstclear(&a, NULL);
 	ft_lstclear(&b, NULL);
 	ft_lstclear(&inst, free);

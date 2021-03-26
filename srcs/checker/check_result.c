@@ -6,13 +6,61 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 23:33:53 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 21:54:53 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 23:26:39 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	check_result(t_list **a, t_list **b)
+static void	put_ko(int flag)
+{
+	if (!(flag & CFLAG))
+		return (ft_putendl_fd("KO", STDOUT_FILENO));
+	ft_putstr_fd(BRED"  "RESET"     "BRED"  "RESET" ", STDOUT_FILENO);
+	ft_putendl_fd("  "BRED"    "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"  "RESET"    "BRED"  "RESET"  ", STDOUT_FILENO);
+	ft_putendl_fd(" "BRED"  "RESET"   "BRED"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"  "RESET"   "BRED"  "RESET"   ", STDOUT_FILENO);
+	ft_putendl_fd(BRED"  "RESET"     "BRED" "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"  "RESET"  "BRED"  "RESET"    ", STDOUT_FILENO);
+	ft_putendl_fd(BRED"  "RESET"     "BRED"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"     "RESET"     ", STDOUT_FILENO);
+	ft_putendl_fd(BRED"  "RESET"     "BRED"   "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"   "RESET" "BRED"  "RESET"    ", STDOUT_FILENO);
+	ft_putendl_fd(BRED"  "RESET"     "BRED"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"  "RESET"   "BRED"  "RESET"   ", STDOUT_FILENO);
+	ft_putendl_fd(BRED"  "RESET"     "BRED" "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"  "RESET"    "BRED"  "RESET"  ", STDOUT_FILENO);
+	ft_putendl_fd(" "BRED"  "RESET"   "BRED"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BRED"  "RESET"     "BRED"  "RESET" ", STDOUT_FILENO);
+	ft_putendl_fd("  "BRED"    "RESET, STDOUT_FILENO);
+}
+
+static void	put_ok(int flag)
+{
+	if (!(flag & CFLAG))
+		return (ft_putendl_fd("OK", STDOUT_FILENO));
+	ft_putstr_fd("  "BGREEN"    "RESET"    ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"  "RESET"     "BGREEN"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(" "BGREEN"  "RESET"   "BGREEN"  "RESET"  ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"  "RESET"    "BGREEN"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BGREEN"  "RESET"     "BGREEN" "RESET"  ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"  "RESET"   "BGREEN"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BGREEN"  "RESET"     "BGREEN"  "RESET" ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"  "RESET"  "BGREEN"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BGREEN"  "RESET"     "BGREEN"  "RESET" ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"     "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BGREEN"  "RESET"     "BGREEN"  "RESET" ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"   "RESET" "BGREEN"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(BGREEN"  "RESET"     "BGREEN" "RESET"  ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"  "RESET"   "BGREEN"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd(" "BGREEN"  "RESET"   "BGREEN"  "RESET"  ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"  "RESET"    "BGREEN"  "RESET, STDOUT_FILENO);
+	ft_putstr_fd("  "BGREEN"    "RESET"    ", STDOUT_FILENO);
+	ft_putendl_fd(BGREEN"  "RESET"     "BGREEN"  "RESET, STDOUT_FILENO);
+}
+
+void	check_result(t_list **a, t_list **b, int flag)
 {
 	t_list	*lst;
 
@@ -20,10 +68,10 @@ void	check_result(t_list **a, t_list **b)
 	while (lst && lst->next)
 	{
 		if (ft_atoi((char *)lst->content) > ft_atoi((char *)lst->next->content))
-			return (ft_putendl_fd("KO", 1));
+			return (put_ko(flag));
 		lst = lst->next;
 	}
 	if (*b)
-		return (ft_putendl_fd("KO", 1));
-	ft_putendl_fd("OK", 1);
+		return (put_ko(flag));
+	put_ok(flag);
 }

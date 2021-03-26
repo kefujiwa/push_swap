@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 21:30:42 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 23:29:51 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,21 @@
 /*
 ** MACRO DECLARATION - ESCAPE SEQUENCE
 */
-# define ESC "\x1b"
-# define CLEAR "\x1b[2J"
-# define UP "\x1b[1A"
-# define DOWN "\x1b[1B"
-# define RIGHT "\x1b[1C"
-# define LEFT "\x1b[1D"
-# define CRLF "\x1b[1E"
-# define RESET	"\x1b[0m"
-# define BOLD	"\x1b[1m"
-# define RED	"\x1b[31m"
-# define GREEN	"\x1b[32m"
-# define YELLOW "\x1b[33m"
-
+# define ESC     "\x1b"
+# define CLEAR   "\x1b[2J"
+# define UP      "\x1b[1A"
+# define DOWN    "\x1b[1B"
+# define RIGHT   "\x1b[1C"
+# define LEFT    "\x1b[1D"
+# define CRLF    "\x1b[1E"
+# define RESET   "\x1b[0m"
+# define BOLD    "\x1b[1m"
+# define RED     "\x1b[31m"
+# define GREEN   "\x1b[32m"
+# define YELLOW  "\x1b[33m"
+# define BRED    "\x1b[41m"
+# define BGREEN  "\x1b[42m"
+# define BYELLOW "\x1b[43m"
 /*
 ** MACRO DECLARATION - DRAWING SPEED
 */
@@ -48,7 +50,7 @@
 /*
 ** PROTOTYPE DECLARATION
 */
-void	check_result(t_list **a, t_list **b);
+void	check_result(t_list **a, t_list **b, int flag);
 void	draw_process(t_list *a, t_list *b, t_list *inst);
 int		parse_option(int *flag, char **argv);
 void	perform_instruction(t_list **a, t_list **b, t_list *inst, int flag);
