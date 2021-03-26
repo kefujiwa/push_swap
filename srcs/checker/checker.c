@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 13:46:40 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 13:52:54 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static int	init_list(t_list **a, t_list **b, t_list **inst, char **argv)
 			return (INVALID);
 		ft_lstadd_back(inst, ft_lstnew(line));
 	}
+	free(line);
 	if (ret == -1)
 		return (INVALID);
 	return (VALID);
