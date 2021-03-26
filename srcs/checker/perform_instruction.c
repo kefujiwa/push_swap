@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 00:05:18 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/26 21:13:29 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,15 @@ static void	check_instruction(t_list **a, t_list **b, t_list *inst)
 		reverse_rotate_r(a, b);
 }
 
-void		perform_instruction(t_list **a, t_list **b, t_list *inst)
+void		perform_instruction(t_list **a, t_list **b, t_list *inst, int flag)
 {
+	if (flag & VFLAG)
+		draw_process(*a, *b, inst);
 	while (inst)
 	{
 		check_instruction(a, b, inst);
+		if (flag & VFLAG)
+			draw_process(*a, *b, inst);
 		inst = inst->next;
 	}
 }

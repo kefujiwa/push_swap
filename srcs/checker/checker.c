@@ -69,7 +69,7 @@ int			main(int argc, char **argv)
 		return (put_error());
 	if (!init_list(&a, &b, &inst, argv))
 		return (put_error());
-	perform_instruction(&a, &b, inst);
+	perform_instruction(&a, &b, inst, flag);
 	check_result(&a, &b);
 	ft_lstclear(&a, NULL);
 	ft_lstclear(&b, NULL);
