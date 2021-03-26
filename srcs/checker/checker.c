@@ -51,15 +51,22 @@ static int	init_list(t_list **a, t_list **b, t_list **inst, char **argv)
 
 int			main(int argc, char **argv)
 {
+	int		flag;
 	t_list	*a;
 	t_list	*b;
 	t_list	*inst;
 
 	if (argc == 1)
 		return (EXIT_SUCCESS);
+	if(!parse_option(&flag, ++argv))
+		return (EXIT_FAILURE);
+	while (argv && *argv && **argv == '-')
+		argv++;
+	if (!*argv)
+		return (EXIT_SUCCESS);
 	if (!is_valid_args(argv))
 		return (put_error());
-	if (init_list(&a, &b, &inst, argv) == EXIT_FAILURE)
+	if (!init_list(&a, &b, &inst, argv))
 		return (put_error());
 	perform_instruction(&a, &b, inst);
 	check_result(&a, &b);

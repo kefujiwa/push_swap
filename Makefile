@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/26 00:09:19 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/03/26 12:57:38 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ _BWHITE				= \x1b[47m
 # Compilation #
 CC					= gcc
 CFLAGS				= -Wall -Wextra -Werror
+DEBUG_FLAGS			= -g3 -fsanitize=address
 AR					= ar rcs
 
 # Delete #
@@ -72,6 +73,7 @@ UT_SRCS				= $(addprefix $(UT_DIR), $(addsuffix .c, $(UT_FILES)))
 
 CH_FILES			= check_result \
 					  checker \
+					  parse_option \
 					  perform_instruction \
 					  push \
 					  reverse_rotate_r \
@@ -115,16 +117,18 @@ fclean:
 
 re:					fclean all
 
+debug:				CFLAGS += $(DEBUG_FLAGS)
+debug:				re
+					@echo "$(_BLUE)Debug build done.$(_RESET)"
+
 # Variable Rules #
 $(CHECKER):			$(LIBFT_NAME) $(CH_OBJS)
 						@$(CC) $(CFLAGS) -I $(HEADER_DIR) $(CH_OBJS) $(LIBFT_NAME) -o $(CHECKER)
 						@echo "\n\n$(_GREEN)Executable '$(CHECKER)' created.\n$(_RESET)"
-						@echo "$(BLUE)Try \"./checker\". $(END)"
 
 $(PUSH_SWAP):		$(LIBFT_NAME) $(PS_OBJS)
 						@$(CC) $(CFLAGS) -I $(HEADER_DIR) $(PS_OBJS) $(LIBFT_NAME) -o $(PUSH_SWAP)
 						@echo "\n\n$(_GREEN)Executable '$(PUSH_SWAP)' created.\n$(_RESET)"
-						@echo "$(BLUE)Try \"./push_swap\". $(END)"
 
 $(LIBFT_NAME):		FORCE
 						@$(MAKE) -C $(LIBFT_DIR)
