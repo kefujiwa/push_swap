@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 12:47:43 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:21:46 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@
 */
 # define VALID 1
 # define INVALID 0
+
+/*
+** TYPEDEF
+*/
+typedef t_dlist t_stack;
 
 /*
 ** PROTOTYPE DECLARATION

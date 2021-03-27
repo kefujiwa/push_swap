@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 23:33:53 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 23:47:56 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:53:25 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ static void	put_ok(int flag)
 	ft_putendl_fd(BGREEN"  "RESET"     "BGREEN"  "RESET, STDOUT_FILENO);
 }
 
-void	check_result(t_list **a, t_list **b, int flag)
+void	check_result(t_stack **a, t_stack **b, int flag)
 {
-	t_list	*lst;
+	t_stack	*lst;
 
 	lst = *a;
 	while (lst && lst->next)

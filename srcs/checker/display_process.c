@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:26:27 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 01:40:14 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:50:29 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	display_header(int cnt, char *line)
 	ft_putstr_fd(ESC"[2;1H-----A-----o-----B-----", STDERR_FILENO);
 }
 
-static void	display_stack(t_list *a, t_list *b)
+static void	display_stack(t_stack *a, t_stack *b)
 {
 	int	len;
 
@@ -68,15 +68,15 @@ static void	display_stack(t_list *a, t_list *b)
 	}
 }
 
-static void	display_footer(t_list *a, t_list *b)
+static void	display_footer(t_stack *a, t_stack *b)
 {
 	int	row;
 	int	i;
 
-	if (ft_lstsize(a) > ft_lstsize(b))
-		row = ft_lstsize(a);
+	if (ft_dlstsize(a) > ft_dlstsize(b))
+		row = ft_dlstsize(a);
 	else
-		row = ft_lstsize(b);
+		row = ft_dlstsize(b);
 	ft_putstr_fd(ESC"[3;1H", STDERR_FILENO);
 	i = 0;
 	while (i++ < row)
@@ -86,7 +86,7 @@ static void	display_footer(t_list *a, t_list *b)
 		ft_putstr_fd(ESC"[17;1H", STDERR_FILENO);
 }
 
-void		display_process(t_list *a, t_list *b, char *line)
+void		display_process(t_stack *a, t_stack *b, char *line)
 {
 	static int	cnt = -1;
 

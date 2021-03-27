@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 00:59:07 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:52:09 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int			main(int argc, char **argv)
 {
 	int		flag;
-	t_list	*a;
-	t_list	*b;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
@@ -35,7 +35,7 @@ int			main(int argc, char **argv)
 	if (!perform_instruction(&a, &b, flag))
 		return (put_error());
 	check_result(&a, &b, flag);
-	ft_lstclear(&a, NULL);
-	ft_lstclear(&b, NULL);
+	ft_dlstclear(&a, NULL);
+	ft_dlstclear(&b, NULL);
 	return (EXIT_SUCCESS);
 }

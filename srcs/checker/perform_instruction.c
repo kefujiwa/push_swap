@@ -6,13 +6,13 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 01:37:17 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:13:45 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	check_instruction(t_list **a, t_list **b, char *line)
+static int	check_instruction(t_stack **a, t_stack **b, char *line)
 {
 	if (!ft_strcmp(line, "sa"))
 		return (swap_s(a, NULL));
@@ -27,7 +27,7 @@ static int	check_instruction(t_list **a, t_list **b, char *line)
 	else if (!ft_strcmp(line, "ra"))
 		return (rotate_s(a, NULL));
 	else if (!ft_strcmp(line, "rb"))
-		return (rotate_s(a, NULL));
+		return (rotate_s(b, NULL));
 	else if (!ft_strcmp(line, "rr"))
 		return (rotate_s(a, b));
 	else if (!ft_strcmp(line, "rra"))
@@ -40,7 +40,7 @@ static int	check_instruction(t_list **a, t_list **b, char *line)
 		return (INVALID);
 }
 
-int			perform_instruction(t_list **a, t_list **b, int flag)
+int			perform_instruction(t_stack **a, t_stack **b, int flag)
 {
 	char	*line;
 	int		ret;

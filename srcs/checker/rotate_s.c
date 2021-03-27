@@ -6,23 +6,24 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:57:36 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 00:50:19 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:54:35 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static void	rotate(t_list **lst)
+static void	rotate(t_stack **lst)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	tmp = *lst;
 	*lst = tmp->next;
+	(*lst)->prev = NULL;
 	tmp->next = NULL;
-	ft_lstadd_back(lst, tmp);
+	ft_dlstadd_back(lst, tmp);
 }
 
-int			rotate_s(t_list **lst1, t_list **lst2)
+int			rotate_s(t_stack **lst1, t_stack **lst2)
 {
 	if (lst1 && *lst1)
 		rotate(lst1);

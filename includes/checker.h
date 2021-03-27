@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 01:36:30 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 16:21:31 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@
 /*
 ** PROTOTYPE DECLARATION
 */
-void	check_result(t_list **a, t_list **b, int flag);
-void	display_process(t_list *a, t_list *b, char *line);
+void	check_result(t_stack **a, t_stack **b, int flag);
+void	display_process(t_stack *a, t_stack *b, char *line);
 int		parse_option(int *flag, char **argv);
-int		perform_instruction(t_list **a, t_list **b, int flag);
-int		push(t_list **dst, t_list **src);
-int		reverse_rotate_r(t_list **lst1, t_list **lst2);
-int		rotate_s(t_list **lst1, t_list **lst2);
-int		swap_s(t_list **lst1, t_list **lst2);
+int		perform_instruction(t_stack **a, t_stack **b, int flag);
+int		push(t_stack **dst, t_stack **src);
+int		reverse_rotate_r(t_stack **lst1, t_stack **lst2);
+int		rotate_s(t_stack **lst1, t_stack **lst2);
+int		swap_s(t_stack **lst1, t_stack **lst2);
 
 #endif
