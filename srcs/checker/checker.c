@@ -31,7 +31,7 @@ int			main(int argc, char **argv)
 	if (!is_valid_args(argv))
 		return (put_error());
 	while (*argv)
-		ft_lstadd_back(&a, ft_lstnew(*argv++));
+		ft_dlstadd_back(&a, ft_dlstnew((void *)(intptr_t)ft_atoi(*argv++)));
 	if (!perform_instruction(&a, &b, flag))
 		return (put_error());
 	check_result(&a, &b, flag);

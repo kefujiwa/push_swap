@@ -67,7 +67,7 @@ void	check_result(t_stack **a, t_stack **b, int flag)
 	lst = *a;
 	while (lst && lst->next)
 	{
-		if (ft_atoi((char *)lst->content) > ft_atoi((char *)lst->next->content))
+		if ((int)lst->content > (int)lst->next->content)
 			return (put_ko(flag));
 		lst = lst->next;
 	}

@@ -22,6 +22,7 @@
 ** EXTERNAL LIBRARIES
 */
 # include <limits.h>
+# include <stdint.h>
 # include <stdlib.h>
 
 /*

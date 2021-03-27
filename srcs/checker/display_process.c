@@ -48,11 +48,11 @@ static void	display_stack(t_stack *a, t_stack *b)
 	ft_putstr_fd(ESC"[3;1H", STDERR_FILENO);
 	while (a && a->content)
 	{
-		len = ft_strlen((char *)a->content);
+		len = ft_cnt_digits((int)a->content);
 		while (10 - len++)
 			ft_putstr_fd(RIGHT, STDERR_FILENO);
 		ft_putstr_fd(RIGHT, STDERR_FILENO);
-		ft_putstr_fd((char *)a->content, STDERR_FILENO);
+		ft_putnbr_fd((int)a->content, STDERR_FILENO);
 		ft_putchar_fd('|', STDERR_FILENO);
 		ft_putstr_fd(CRLF, STDERR_FILENO);
 		a = a->next;
@@ -62,7 +62,7 @@ static void	display_stack(t_stack *a, t_stack *b)
 	{
 		ft_putstr_fd(ESC"[11C", STDERR_FILENO);
 		ft_putchar_fd('|', STDERR_FILENO);
-		ft_putstr_fd((char *)b->content, STDERR_FILENO);
+		ft_putnbr_fd((int)b->content, STDERR_FILENO);
 		ft_putstr_fd(CRLF, STDERR_FILENO);
 		b = b->next;
 	}
