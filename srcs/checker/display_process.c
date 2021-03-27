@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_process.c                                     :+:      :+:    :+:   */
+/*   display_process.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:26:27 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 00:53:12 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 01:40:14 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static void	draw_instructions(void)
+static void	display_instructions(void)
 {
 	ft_putstr_fd(ESC"[2;26H""---instructions---", 1);
 	ft_putstr_fd(ESC"[3;26H""> sa : swap a", 1);
@@ -29,7 +29,7 @@ static void	draw_instructions(void)
 	ft_putstr_fd(ESC"[15;26H""> EOF => Ctrl + D\n", 1);
 }
 
-static void	draw_header(int cnt, char *line)
+static void	display_header(int cnt, char *line)
 {
 	ft_putstr_fd(ESC"[1;1H", STDERR_FILENO);
 	if (line)
@@ -41,7 +41,7 @@ static void	draw_header(int cnt, char *line)
 	ft_putstr_fd(ESC"[2;1H-----A-----o-----B-----", STDERR_FILENO);
 }
 
-static void	draw_lst(t_list *a, t_list *b)
+static void	display_stack(t_list *a, t_list *b)
 {
 	int	len;
 
@@ -68,7 +68,7 @@ static void	draw_lst(t_list *a, t_list *b)
 	}
 }
 
-static void	draw_footer(t_list *a, t_list *b)
+static void	display_footer(t_list *a, t_list *b)
 {
 	int	row;
 	int	i;
@@ -86,14 +86,14 @@ static void	draw_footer(t_list *a, t_list *b)
 		ft_putstr_fd(ESC"[17;1H", STDERR_FILENO);
 }
 
-void		draw_process(t_list *a, t_list *b, char *line)
+void		display_process(t_list *a, t_list *b, char *line)
 {
 	static int	cnt = -1;
 
 	cnt++;
 	ft_putstr_fd(CLEAR, STDERR_FILENO);
-	draw_instructions();
-	draw_header(cnt, line);
-	draw_lst(a, b);
-	draw_footer(a, b);
+	display_instructions();
+	display_header(cnt, line);
+	display_stack(a, b);
+	display_footer(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 00:54:18 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/27 01:37:17 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ int			perform_instruction(t_list **a, t_list **b, int flag)
 	int		ret;
 
 	if (flag & VFLAG)
-		draw_process(*a, *b, NULL);
+		display_process(*a, *b, NULL);
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
 		if (!check_instruction(a, b, line))
 			return (INVALID);
 		if (flag & VFLAG)
-			draw_process(*a, *b, line);
+			display_process(*a, *b, line);
 	}
 	free (line);
 	if (ret == -1)

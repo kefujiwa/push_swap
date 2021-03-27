@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/26 20:54:54 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/03/27 01:36:44 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ UT_SRCS				= $(addprefix $(UT_DIR), $(addsuffix .c, $(UT_FILES)))
 
 CH_FILES			= check_result \
 					  checker \
-					  draw_process \
+					  display_process \
 					  parse_option \
 					  perform_instruction \
 					  push \
