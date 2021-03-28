@@ -6,13 +6,13 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:24:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 23:33:00 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:27:19 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static void	swap_st(t_stack *st)
+static void	swap_multi(t_stack *st)
 {
 	t_dlist	*first;
 	t_dlist	*second;
@@ -28,11 +28,24 @@ static void	swap_st(t_stack *st)
 	st->first = second;
 }
 
+static void	swap_pair(t_stack *st)
+{
+	t_dlist	*tmp;
+
+	tmp = st->first;
+	st->first = st->last;
+	st->last = tmp;
+}
+
 int			swap(t_stack *st1, t_stack *st2)
 {
-	if (st1 && st1->size > 1)
-		swap_st(st1);
-	if (st2 && st2->size > 1)
-		swap_st(st2);
+	if (st1 && st1->size == 2)
+		swap_pair(st1);
+	else if (st1 && st1->size > 2)
+		swap_multi(st1);
+	if (st2 && st2->size == 2)
+		swap_pair(st2);
+	else if (st2 && st2->size > 2)
+		swap_multi(st2);
 	return (VALID);
 }
