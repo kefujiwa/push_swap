@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 23:29:32 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 01:14:40 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct	s_stack
 ** PROTOTYPE DECLARATION
 */
 int	build_stack(t_stack *a, t_stack *b, char **argv);
-int	is_sorted(t_stack *a, t_stack *b);
+int	is_sorted(t_stack *st);
 int	is_valid_args(char **argv);
 int	push(t_stack *dst, t_stack *src);
 int	put_error(void);
