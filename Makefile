@@ -72,9 +72,9 @@ UT_FILES			= is_sorted \
 					  put_error
 UT_SRCS				= $(addprefix $(UT_DIR), $(addsuffix .c, $(UT_FILES)))
 
-CH_FILES			= check_result \
-					  checker \
+CH_FILES			= checker \
 					  display_process \
+					  output_result \
 					  parse_option \
 					  perform_instruction \
 					  push \
