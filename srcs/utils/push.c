@@ -6,11 +6,11 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:51:45 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 16:13:08 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:15:03 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "utils.h"
 
 int	push(t_stack **dst, t_stack **src)
 {

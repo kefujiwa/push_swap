@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 17:31:31 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:04:14 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ typedef t_dlist t_stack;
 */
 int	is_sorted(t_stack *a, t_stack *b);
 int	is_valid_args(char **argv);
+int	push(t_stack **dst, t_stack **src);
 int	put_error(void);
+int	reverse_rotate(t_stack **lst1, t_stack **lst2);
+int	rotate(t_stack **lst1, t_stack **lst2);
+int	swap(t_stack **lst1, t_stack **lst2);
+
 
 #endif

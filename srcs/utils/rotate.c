@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_s.c                                           :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 22:24:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 15:51:43 by kefujiwa         ###   ########.fr       */
+/*   Created: 2021/03/25 22:57:36 by kefujiwa          #+#    #+#             */
+/*   Updated: 2021/03/28 18:15:19 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "utils.h"
 
-static void	swap(t_stack **lst)
+static void	rotate_st(t_stack **st)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_stack	*tmp;
 
-	first = *lst;
-	second = first->next;
-	first->prev = second;
-	first->next = second->next;
-	second->prev = NULL;
-	second->next = first;
-	*lst = second;
+	tmp = *st;
+	*st = tmp->next;
+	(*st)->prev = NULL;
+	tmp->next = NULL;
+	ft_dlstadd_back(st, tmp);
 }
 
-int			swap_s(t_stack **lst1, t_stack **lst2)
+int			rotate(t_stack **st1, t_stack **st2)
 {
-	if (lst1 && *lst1 && (*lst1)->next)
-		swap(lst1);
-	if (lst2 && *lst2 && (*lst2)->next)
-		swap(lst2);
+	if (st1 && *st1)
+		rotate_st(st1);
+	if (st2 && *st2)
+		rotate_st(st2);
 	return (VALID);
 }

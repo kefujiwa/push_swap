@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/28 17:30:36 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/03/28 18:04:30 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,18 +69,18 @@ LIBFT_DIR			= libft/
 # Files #
 UT_FILES			= is_sorted \
 					  is_valid_args \
-					  put_error
+					  push \
+					  put_error \
+					  reverse_rotate \
+					  rotate \
+					  swap
 UT_SRCS				= $(addprefix $(UT_DIR), $(addsuffix .c, $(UT_FILES)))
 
 CH_FILES			= checker \
 					  display_process \
 					  output_result \
 					  parse_option \
-					  perform_instruction \
-					  push \
-					  reverse_rotate_r \
-					  rotate_s \
-					  swap_s
+					  perform_instruction
 CH_SRCS				= $(addprefix $(CH_DIR), $(addsuffix .c, $(CH_FILES))) \
 					  $(UT_SRCS)
 
