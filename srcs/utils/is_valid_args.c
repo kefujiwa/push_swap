@@ -6,58 +6,32 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:15:52 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 12:56:17 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 17:33:24 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include <stdio.h>
 
-static int	within_range(char *str, int is_negative)
+static int	is_integer(char *str)
 {
-	unsigned int	num;
-	unsigned int	max;
-	int				digit;
+	char	*tmp;
+	long	num;
 
-	num = 0;
-	max = INT_MAX;
-	digit = 7;
-	if (is_negative)
-		digit = 8;
-	while (*str)
-	{
-		if (num < max / 10 || (num == max / 10 && *str - '0' <= digit))
-			num = num * 10 + (*str - '0');
-		else
-			return (INVALID);
-		str++;
-	}
-	return (VALID);
-}
-
-static int	is_numeric(char *str)
-{
-	int		is_negative;
-	char	*num;
-	int		ret;
-
-	is_negative = 0;
-	if (*str == '-')
-	{
-		is_negative = 1;
-		str++;
-	}
-	if (!*str)
+	tmp = str;
+	if (*tmp == '-')
+		tmp++;
+	if (!*tmp)
 		return (INVALID);
-	num = str;
-	while (*str)
+	while (*tmp)
 	{
-		if (!ft_isdigit(*str))
+		if (!ft_isdigit(*tmp))
 			return (INVALID);
-		str++;
+		tmp++;
 	}
-	ret = within_range(num, is_negative);
-	return (ret);
+	num = ft_atol(str);
+	if (num < INT_MIN || num > INT_MAX)
+		return (INVALID);
+	return (VALID);
 }
 
 int	is_valid_args(char **argv)
@@ -66,7 +40,7 @@ int	is_valid_args(char **argv)
 
 	while (*argv)
 	{
-		if (!is_numeric(*argv))
+		if (!is_integer(*argv))
 			return (INVALID);
 		tmp = argv + 1;
 		while (*tmp)
