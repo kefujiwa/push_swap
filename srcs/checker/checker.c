@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 17:30:58 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:21:38 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int			main(int argc, char **argv)
 		return (EXIT_SUCCESS);
 	if(!parse_option(&flag, ++argv))
 		return (EXIT_FAILURE);
-	while (argv && *argv && **argv == '-')
+	while (argv && is_option(*argv))
 		argv++;
 	if (!*argv)
 		return (EXIT_SUCCESS);
