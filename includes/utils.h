@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/27 16:21:46 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 17:31:31 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef t_dlist t_stack;
 /*
 ** PROTOTYPE DECLARATION
 */
+int	is_sorted(t_stack *a, t_stack *b);
 int	is_valid_args(char **argv);
 int	put_error(void);
 

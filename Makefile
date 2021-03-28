@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/27 01:36:44 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/03/28 17:30:36 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,8 @@ UT_DIR				= utils/
 LIBFT_DIR			= libft/
 
 # Files #
-UT_FILES			= is_valid_args \
+UT_FILES			= is_sorted \
+					  is_valid_args \
 					  put_error
 UT_SRCS				= $(addprefix $(UT_DIR), $(addsuffix .c, $(UT_FILES)))
 
