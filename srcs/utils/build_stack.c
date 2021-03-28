@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   build_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 23:17:24 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 23:32:34 by kefujiwa         ###   ########.fr       */
+/*   Created: 2021/03/28 20:59:41 by kefujiwa          #+#    #+#             */
+/*   Updated: 2021/03/29 00:02:48 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static void	reverse_rotate_st(t_stack *st)
+int	build_stack(t_stack *a, t_stack *b, char **argv)
 {
-	t_dlist	*head;
+	intptr_t	content;
 
-	head = st->first;
-	st->first = head->prev;
-	st->last = head;
-}
-
-int			reverse_rotate(t_stack *st1, t_stack *st2)
-{
-	if (st1 && st1->size > 1)
-		reverse_rotate_st(st1);
-	if (st2 && st2->size > 1)
-		reverse_rotate_st(st2);
+	if (!is_valid_args(argv))
+		return (INVALID);
+	a->first = NULL;
+	while (*argv)
+	{
+		content = (intptr_t)ft_atoi(*argv);
+		ft_dlstadd_back(&(a->first), ft_dlstnew((void *)content));
+		argv++;
+	}
+	a->last = ft_dlstlast(a->first);
+	a->size = ft_dlstsize(a->first);
+	a->first->prev = a->last;
+	a->last->next = a->first;
+	b->first = NULL;
+	b->last = NULL;
+	b->size = 0;
 	return (VALID);
 }

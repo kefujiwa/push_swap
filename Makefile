@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/28 18:20:20 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/03/28 21:34:58 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,8 @@ UT_DIR				= utils/
 LIBFT_DIR			= libft/
 
 # Files #
-UT_FILES			= is_sorted \
+UT_FILES			= build_stack \
+					  is_sorted \
 					  is_valid_args \
 					  push \
 					  put_error \

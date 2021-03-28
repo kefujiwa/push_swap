@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:15:52 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 17:33:24 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:03:42 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	is_integer(char *str)
 	return (VALID);
 }
 
-int	is_valid_args(char **argv)
+int			is_valid_args(char **argv)
 {
 	char	**tmp;
 

@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 17:06:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 17:14:25 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 23:27:17 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 int	is_sorted(t_stack *a, t_stack *b)
 {
-	while (a && a->next)
+	t_dlist	*head;
+
+	head = a->first;
+	while (head != a->last)
 	{
-		if ((int)a->content > (int)a->next->content)
+		if ((int)head->content > (int)head->next->content)
 			return (INVALID);
-		a = a->next;
+		head = head->next;
 	}
-	if (b)
+	if (b->first)
 		return (INVALID);
 	return (VALID);
 }

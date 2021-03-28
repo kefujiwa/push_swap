@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 18:20:06 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 23:26:25 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void	display_process(t_stack *a, t_stack *b, char *line);
 int		is_option(char *str);
 void	output_result(t_stack *a, t_stack *b, int flag);
 int		parse_option(int *flag, char **argv);
-int		perform_instruction(t_stack **a, t_stack **b, int flag);
+int		perform_instruction(t_stack *a, t_stack *b, int flag);
 
 #endif

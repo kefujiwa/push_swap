@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 23:33:53 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 17:37:59 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 23:58:41 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	put_ok(int flag)
 	ft_putendl_fd(BGREEN"  "RESET"     "BGREEN"  "RESET, STDOUT_FILENO);
 }
 
-void	output_result(t_stack *a, t_stack *b, int flag)
+void		output_result(t_stack *a, t_stack *b, int flag)
 {
 	if (is_sorted(a, b))
 		put_ok(flag);

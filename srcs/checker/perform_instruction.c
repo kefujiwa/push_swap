@@ -6,13 +6,13 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 18:05:11 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 23:59:00 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	check_instruction(t_stack **a, t_stack **b, char *line)
+static int	check_instruction(t_stack *a, t_stack *b, char *line)
 {
 	if (!ft_strcmp(line, "sa"))
 		return (swap(a, NULL));
@@ -40,21 +40,21 @@ static int	check_instruction(t_stack **a, t_stack **b, char *line)
 		return (INVALID);
 }
 
-int			perform_instruction(t_stack **a, t_stack **b, int flag)
+int			perform_instruction(t_stack *a, t_stack *b, int flag)
 {
 	char	*line;
 	int		ret;
 
 	if (flag & VFLAG)
-		display_process(*a, *b, NULL);
+		display_process(a, b, NULL);
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
 		if (!check_instruction(a, b, line))
 			return (INVALID);
 		if (flag & VFLAG)
-			display_process(*a, *b, line);
+			display_process(a, b, line);
 	}
-	free (line);
+	free(line);
 	if (ret == -1)
 		return (INVALID);
 	return (VALID);

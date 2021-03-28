@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 12:11:08 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/26 21:57:42 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/28 23:59:26 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	put_illegal(char c)
 	return (INVALID);
 }
 
-int	parse_option(int *flag, char **argv)
+int			parse_option(int *flag, char **argv)
 {
 	char	*str;
 
@@ -38,7 +38,7 @@ int	parse_option(int *flag, char **argv)
 			else if (*str == 'c')
 				*flag |= CFLAG;
 			else
-				return(put_illegal(*str));
+				return (put_illegal(*str));
 			str++;
 		}
 		argv++;
