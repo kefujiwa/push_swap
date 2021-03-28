@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:27:56 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 23:26:25 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 03:36:19 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "utils.h"
 
 /*
-** MACRO DECLARATION - BIT MASK FLAG
+** MACRO DECLARATION - OPTION
 */
 # define VFLAG 0x01
 # define CFLAG 0x02

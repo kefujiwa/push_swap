@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 01:14:40 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 04:02:59 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@
 # define INVALID 0
 
 /*
+** MACRO DECLARATION - INSTRUCTION TYPE
+*/
+# define NONE 0x0
+# define AFLAG 0x1
+# define BFLAG 0x2
+
+/*
 ** STRUCTURE
 */
 typedef struct	s_stack
@@ -47,11 +54,11 @@ typedef struct	s_stack
 int	build_stack(t_stack *a, t_stack *b, char **argv);
 int	is_sorted(t_stack *st);
 int	is_valid_args(char **argv);
-int	push(t_stack *dst, t_stack *src);
+int	push(t_stack *dst, t_stack *src, int flag);
 int	put_error(void);
-int	reverse_rotate(t_stack *st1, t_stack *st2);
-int	rotate(t_stack *st1, t_stack *st2);
-int	swap(t_stack *st1, t_stack *st2);
+int	reverse_rotate(t_stack *st1, t_stack *st2, int flag);
+int	rotate(t_stack *st1, t_stack *st2, int flag);
+int	swap(t_stack *st1, t_stack *st2, int flag);
 
 
 #endif

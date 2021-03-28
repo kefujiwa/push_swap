@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:51:45 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 00:03:29 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 03:55:03 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	push_to(t_stack *dst, t_dlist *element)
 	dst->size++;
 }
 
-int			push(t_stack *dst, t_stack *src)
+int			push(t_stack *dst, t_stack *src, int flag)
 {
 	t_dlist	*tmp;
 
@@ -50,5 +50,9 @@ int			push(t_stack *dst, t_stack *src)
 	tmp = src->first;
 	pop_from(src);
 	push_to(dst, tmp);
+	if (flag == AFLAG)
+		ft_putendl_fd("pa", STDOUT_FILENO);
+	else if (flag == BFLAG)
+		ft_putendl_fd("pb", STDOUT_FILENO);
 	return (VALID);
 }
