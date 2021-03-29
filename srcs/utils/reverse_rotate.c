@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 23:17:24 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 04:05:50 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 18:10:13 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 static void	reverse_rotate_st(t_stack *st)
 {
-	t_dlist	*head;
-
-	head = st->first;
-	st->first = head->prev;
-	st->last = head;
+	st->first = st->first->prev;
+	st->last = st->first->prev;
 }
 
 int			reverse_rotate(t_stack *st1, t_stack *st2, int flag)

@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:57:36 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 04:06:01 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 18:10:45 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 static void	rotate_st(t_stack *st)
 {
-	t_dlist	*head;
-
-	head = st->first;
-	st->first = head->next;
-	st->last = head;
+	st->first = st->first->next;
+	st->last = st->first->prev;
 }
 
 int			rotate(t_stack *st1, t_stack *st2, int flag)
