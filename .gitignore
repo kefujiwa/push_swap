@@ -53,3 +53,4 @@ dkms.conf
 
 /checker
 /push_swap
+/test/*.txt
