@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/30 20:56:06 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/03/31 02:50:50 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,13 +122,16 @@ fclean:
 					@echo "$(_RED)Cleaning push_swap objects...\n$(_RESET)"
 					@$(RM) $(OBJS_DIR)
 					@echo "$(_RED)Deleting Executable '$(CHECKER)' and '$(PUSH_SWAP)'...\n$(_RESET)"
-					@$(RM) $(CHECKER) $(PUSH_SWAP) *.dSYM
+					@$(RM) $(CHECKER) $(PUSH_SWAP) *.dSYM test/*.txt
 
 re:					fclean all
 
 debug:				CFLAGS += $(DEBUG_FLAGS)
 debug:				re
-					@echo "$(_BLUE)Debug build done.$(_RESET)"
+						@echo "$(_BLUE)Debug build done.$(_RESET)"
+
+test:				fclean all
+						@bash ./test/grademe.sh	
 
 # Variable Rules #
 $(CHECKER):			$(LIBFT_NAME) $(CH_OBJS)
