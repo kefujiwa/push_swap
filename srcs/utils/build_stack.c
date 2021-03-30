@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 20:59:41 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 00:02:48 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/29 17:37:03 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ int	build_stack(t_stack *a, t_stack *b, char **argv)
 	a->size = ft_dlstsize(a->first);
 	a->first->prev = a->last;
 	a->last->next = a->first;
+	a->partition = NULL;
 	b->first = NULL;
 	b->last = NULL;
 	b->size = 0;
+	b->partition = NULL;
 	return (VALID);
 }

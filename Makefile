@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/28 21:34:58 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/03/30 20:56:06 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,12 @@ CH_FILES			= checker \
 CH_SRCS				= $(addprefix $(CH_DIR), $(addsuffix .c, $(CH_FILES))) \
 					  $(UT_SRCS)
 
-PS_FILES			= push_swap
+PS_FILES			= get_median \
+					  get_partition_end \
+					  push_swap \
+					  solve_a \
+					  solve_b \
+					  quick_sort
 PS_SRCS				= $(addprefix $(PS_DIR), $(addsuffix .c, $(PS_FILES))) \
 					  $(UT_SRCS)
 
@@ -105,7 +110,7 @@ PUSH_SWAP			= push_swap
 ## RULES ##
 
 # Main Rules #
-all:				$(CHECKER)
+all:				$(CHECKER) $(PUSH_SWAP)
 
 clean:
 					@$(MAKE) clean -C $(LIBFT_DIR)

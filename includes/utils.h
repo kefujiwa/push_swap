@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/30 13:40:39 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/30 15:44:14 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct	s_stack
 	t_dlist	*first;
 	t_dlist	*last;
 	int		size;
+	t_dlist	*partition;
 }				t_stack;
 
 /*
