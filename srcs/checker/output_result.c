@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 23:33:53 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 14:58:28 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/30 13:41:26 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	put_ok(int flag)
 
 void		output_result(t_stack *a, t_stack *b, int flag)
 {
-	if (is_sorted(a, ASC) && !b->first)
+	if (is_sorted(a, a->last, ASC) && !b->first)
 		put_ok(flag);
 	else
 		put_ko(flag);

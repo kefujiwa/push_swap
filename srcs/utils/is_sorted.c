@@ -6,18 +6,20 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 17:06:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 14:57:29 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/30 13:40:22 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	is_sorted(t_stack *st, int flag)
+int	is_sorted(t_stack *st, t_dlist *last, int flag)
 {
 	t_dlist	*head;
 
 	head = st->first;
-	while (head != st->last)
+	if (!last)
+		last = st->last;
+	while (head != last)
 	{
 		if (flag == ASC && (int)head->content > (int)head->next->content)
 			return (INVALID);
