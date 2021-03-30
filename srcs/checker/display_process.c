@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:26:27 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 23:50:36 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/03/30 23:09:23 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ static void	display_stack_a(t_stack *a)
 	while (i++ < a->size)
 	{
 		len = ft_cnt_digits((int)head->content);
-		while (10 - len++)
+		while (11 - len++ > 0)
 			ft_putstr_fd(RIGHT, STDERR_FILENO);
-		ft_putstr_fd(RIGHT, STDERR_FILENO);
 		ft_putnbr_fd((int)head->content, STDERR_FILENO);
 		ft_putchar_fd('|', STDERR_FILENO);
 		ft_putstr_fd(CRLF, STDERR_FILENO);
@@ -72,7 +71,7 @@ static void	display_footer(t_stack *a, t_stack *b)
 	int	row;
 	int	i;
 
-	row = 4;
+	row = 0;
 	if (a->size > b->size)
 		row += a->size;
 	else
@@ -82,7 +81,7 @@ static void	display_footer(t_stack *a, t_stack *b)
 	while (i++ < row)
 		ft_putstr_fd(DOWN, STDERR_FILENO);
 	ft_putstr_fd("-----------o-----------\n\n", STDERR_FILENO);
-	if (row <= 15)
+	if (row + 4 <= 16)
 		ft_putstr_fd(ESC"[18;1H", STDERR_FILENO);
 }
 
@@ -109,4 +108,5 @@ void		display_process(t_stack *a, t_stack *b, char *line)
 	display_stack_a(a);
 	display_stack_b(b);
 	display_footer(a, b);
+	usleep(150000);
 }
