@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/30 15:44:14 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/01 18:11:51 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@
 /*
 ** MACRO DECLARATION - SORT ORDER
 */
-# define ASC 0x1
-# define DESC 0x2
+# define ASC 0x4
+# define DESC 0x8
 
 /*
 ** STRUCTURE
@@ -58,13 +58,13 @@ typedef struct	s_stack
 /*
 ** PROTOTYPE DECLARATION
 */
-int	build_stack(t_stack *a, t_stack *b, char **argv);
-int	is_sorted(t_stack *st, t_dlist *last,  int flag);
-int	is_valid_args(char **argv);
-int	push(t_stack *dst, t_stack *src, int flag);
-int	put_error(void);
-int	reverse_rotate(t_stack *st1, t_stack *st2, int flag);
-int	rotate(t_stack *st1, t_stack *st2, int flag);
-int	swap(t_stack *st1, t_stack *st2, int flag);
+int				build_stack(t_stack *a, t_stack *b, char **argv);
+int				is_sorted(t_stack *st, t_dlist *last, int flag);
+int				is_valid_args(char **argv);
+int				push(t_stack *dst, t_stack *src, int flag);
+int				put_error(void);
+int				reverse_rotate(t_stack *st1, t_stack *st2, int flag);
+int				rotate(t_stack *st1, t_stack *st2, int flag);
+int				swap(t_stack *st1, t_stack *st2, int flag);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 17:06:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/30 13:40:22 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/01 16:08:03 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	is_sorted(t_stack *st, t_dlist *last, int flag)
 		last = st->last;
 	while (head != last)
 	{
-		if (flag == ASC && (int)head->content > (int)head->next->content)
+		if (flag & ASC && (int)head->content > (int)head->next->content)
 			return (INVALID);
-		if (flag == DESC && (int)head->content < (int)head->next->content)
+		if (flag & DESC && (int)head->content < (int)head->next->content)
 			return (INVALID);
 		head = head->next;
 	}

@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/03/31 02:50:50 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/04/01 17:25:29 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,11 +86,14 @@ CH_FILES			= checker \
 CH_SRCS				= $(addprefix $(CH_DIR), $(addsuffix .c, $(CH_FILES))) \
 					  $(UT_SRCS)
 
-PS_FILES			= get_median \
+PS_FILES			= create_partition \
+					  get_median \
 					  get_partition_end \
+					  initial_solver \
 					  push_swap \
-					  solve_a \
-					  solve_b \
+					  partition_solver_a \
+					  partition_solver_b \
+					  sort_u3 \
 					  quick_sort
 PS_SRCS				= $(addprefix $(PS_DIR), $(addsuffix .c, $(PS_FILES))) \
 					  $(UT_SRCS)

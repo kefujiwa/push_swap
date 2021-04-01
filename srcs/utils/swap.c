@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 22:24:37 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 04:06:16 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/01 16:12:24 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int			swap(t_stack *st1, t_stack *st2, int flag)
 		swap_pair(st2);
 	else if (st2 && st2->size > 2)
 		swap_multi(st2);
-	if (flag == AFLAG)
-		ft_putendl_fd("sa", STDOUT_FILENO);
-	else if (flag == BFLAG)
-		ft_putendl_fd("sb", STDOUT_FILENO);
-	else if (flag == (AFLAG | BFLAG))
+	if (flag & AFLAG && flag & BFLAG)
 		ft_putendl_fd("ss", STDOUT_FILENO);
+	else if (flag & AFLAG)
+		ft_putendl_fd("sa", STDOUT_FILENO);
+	else if (flag & BFLAG)
+		ft_putendl_fd("sb", STDOUT_FILENO);
 	return (VALID);
 }
