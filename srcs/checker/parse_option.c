@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 12:11:08 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 23:59:26 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/01 19:46:16 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	put_illegal(char c)
 	ft_putstr_fd("checker: illegal option -- ", STDERR_FILENO);
 	ft_putchar_fd(c, STDERR_FILENO);
 	ft_putchar_fd('\n', STDERR_FILENO);
-	ft_putendl_fd("usage: checker [-vc] [integer ...]", STDERR_FILENO);
+	ft_putendl_fd("usage: checker [-cv] [integer ...]", STDERR_FILENO);
 	return (INVALID);
 }
 
