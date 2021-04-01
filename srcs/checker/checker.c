@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/28 23:58:27 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/01 21:37:33 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int			main(int argc, char **argv)
 	if (!*argv)
 		return (EXIT_SUCCESS);
 	if (!build_stack(&a, &b, argv))
-		return (put_error());
+		exit_error();
 	if (!perform_instruction(&a, &b, flag))
-		return (put_error());
+		exit_error();
 	output_result(&a, &b, flag);
-	ft_dlstclear(&(a.first), NULL);
-	ft_dlstclear(&(b.first), NULL);
+	stack_clear(&a);
+	stack_clear(&b);
 	return (EXIT_SUCCESS);
 }

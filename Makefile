@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/04/01 17:25:29 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/04/01 21:30:49 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,12 +68,13 @@ LIBFT_DIR			= libft/
 
 # Files #
 UT_FILES			= build_stack \
+					  exit_error \
 					  is_sorted \
 					  is_valid_args \
 					  push \
-					  put_error \
 					  reverse_rotate \
 					  rotate \
+					  stack_clear \
 					  swap
 UT_SRCS				= $(addprefix $(UT_DIR), $(addsuffix .c, $(UT_FILES)))
 

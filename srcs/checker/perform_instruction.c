@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/03/29 04:00:37 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/01 20:45:28 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int			perform_instruction(t_stack *a, t_stack *b, int flag)
 			return (INVALID);
 		if (flag & VFLAG)
 			display_process(a, b, line);
+		free(line);
 	}
 	free(line);
 	if (ret == -1)
