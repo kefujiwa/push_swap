@@ -18,7 +18,7 @@ BOLDMAGENTA="\x1b[1m\x1b[35m"
 BOLDCYAN="\x1b[1m\x1b[36m"
 BOLDWHITE="\x1b[1m\x1b[37m"
 
-COUNT=1000
+COUNT=100
 INDEX=0
 MAX3=0
 MAX5=0
@@ -59,11 +59,10 @@ if [ $RESULT = "OK" ] ; then
 	printf "$GREEN%s$RESET " "[OK]"
 elif [ $RESULT = "KO" ] ; then
 	printf "$RED%s$RESET " "[KO]"
-    echo $ARG >> $FILEKO
+    printf "$ARG\n\n" >> $FILEKO
 else
 	printf "$YELLOW%s$RESET " "[ER]"
-    echo $ARG >> $FILEERR
-	printf "$RED%s$RESET " "[KO]"
+    printf "$ARG\n\n" >> $FILEKO
 fi
 TMP=`./push_swap $ARG | wc -l | tr -d ' '`
 if [ $TMP -gt $MAX5 ] ; then
@@ -78,11 +77,10 @@ if [ $RESULT = "OK" ] ; then
 	printf "$GREEN%s$RESET " "[OK]"
 elif [ $RESULT = "KO" ] ; then
 	printf "$RED%s$RESET " "[KO]"
-    echo $ARG >> $FILEKO
+    printf "$ARG\n\n" >> $FILEKO
 else
 	printf "$YELLOW%s$RESET " "[ER]"
-    echo $ARG >> $FILEERR
-	printf "$RED%s$RESET " "[KO]"
+    printf "$ARG\n\n" >> $FILEKO
 fi
 TMP=`./push_swap $ARG | wc -l | tr -d ' '`
 if [ $TMP -gt $MAX100 ] ; then
@@ -97,11 +95,10 @@ if [ $RESULT = "OK" ] ; then
 	printf "$GREEN%s$RESET " "[OK]"
 elif [ $RESULT = "KO" ] ; then
 	printf "$RED%s$RESET " "[KO]"
-    echo $ARG >> $FILEKO
+    printf "$ARG\n\n" >> $FILEKO
 else
 	printf "$YELLOW%s$RESET " "[ER]"
-    echo $ARG >> $FILEERR
-	printf "$RED%s$RESET " "[KO]"
+    printf "$ARG\n\n" >> $FILEKO
 fi
 TMP=`./push_swap $ARG | wc -l | tr -d ' '`
 if [ $TMP -gt $MAX500 ] ; then
