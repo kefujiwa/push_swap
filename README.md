@@ -34,7 +34,7 @@ becomes the first one.
 At the end, stack b must be empty and all integers must be in stack a, sorted in ascending order.
 
 ## Getting Started
-```
+```bash
 git clone https://github.com/kefujiwa/push_swap.git
 cd push_swap
 make all
@@ -42,7 +42,7 @@ make all
 This will generate checker and push_swap program will.
 
 ### Usage
-```
+```bash
 # generate random list of integers
 ARG=`jot -r -s " " 100 -2147483648 2147483647`
 
