@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:26:27 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/02 19:48:09 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/02 20:31:54 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static void	display_stack_a(t_stack *a, char *line, int flag)
 	t_dlist	*head;
 	int		len;
 	int		i;
-	int		ret;
 
 	ft_putstr_fd(ESC"[4;1H", STDERR_FILENO);
 	head = a->first;
@@ -44,10 +43,8 @@ static void	display_stack_a(t_stack *a, char *line, int flag)
 		len = ft_cnt_digits((int)head->content);
 		while (11 - len++ > 0)
 			ft_putstr_fd(RIGHT, STDERR_FILENO);
-		if ((ret = is_colored(a, i, line, flag | AFLAG)) == BEFORE)
+		if (is_colored(i, line, flag | AFLAG))
 			ft_putstr_fd(YELLOW, STDERR_FILENO);
-		else if (ret == AFTER)
-			ft_putstr_fd(BBLUE""YELLOW, STDERR_FILENO);
 		ft_putnbr_fd((int)head->content, STDERR_FILENO);
 		ft_putstr_fd(RESET"|", STDERR_FILENO);
 		ft_putstr_fd(CRLF, STDERR_FILENO);
@@ -59,7 +56,6 @@ static void	display_stack_b(t_stack *b, char *line, int flag)
 {
 	t_dlist	*head;
 	int		i;
-	int		ret;
 
 	ft_putstr_fd(ESC"[4;1H", STDERR_FILENO);
 	head = b->first;
@@ -68,10 +64,8 @@ static void	display_stack_b(t_stack *b, char *line, int flag)
 	{
 		ft_putstr_fd(ESC"[11C", STDERR_FILENO);
 		ft_putstr_fd("|", STDERR_FILENO);
-		if ((ret = is_colored(b, i, line, flag | BFLAG)) == BEFORE)
+		if (is_colored(i, line, flag | BFLAG))
 			ft_putstr_fd(YELLOW, STDERR_FILENO);
-		else if (ret == AFTER)
-			ft_putstr_fd(BBLUE""YELLOW, STDERR_FILENO);
 		ft_putnbr_fd((int)head->content, STDERR_FILENO);
 		ft_putstr_fd(RESET, STDERR_FILENO);
 		ft_putstr_fd(CRLF, STDERR_FILENO);

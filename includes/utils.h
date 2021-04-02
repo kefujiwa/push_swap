@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/02 19:44:34 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/02 20:31:42 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,6 @@
 # define CFLAG 0x40
 
 /*
-** MACRO DECLARATION - DISPLAY PROCESS
-*/
-# define BEFORE 0x80
-# define AFTER 0x100
-
-/*
 ** MACRO DECLARATION - ESCAPE SEQUENCE
 */
 # define ESC     "\x1b"
@@ -93,7 +87,7 @@ typedef struct	s_stack
 */
 int				build_stack(t_stack *a, t_stack *b, char **argv);
 void			exit_error(t_stack *a, t_stack *b);
-int				is_colored(t_stack *st, int row, char *line, int flag);
+int				is_colored(int row, char *line, int flag);
 int				is_sorted(t_stack *st, t_dlist *last, int flag);
 int				is_valid_args(char **argv);
 int				push(t_stack *dst, t_stack *src, int flag);
