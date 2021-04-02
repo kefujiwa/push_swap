@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 23:57:28 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/01 21:33:53 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/02 15:15:55 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			main(int argc, char **argv)
 	if (argc == 1)
 		return (EXIT_SUCCESS);
 	if (!build_stack(&a, &b, ++argv))
-		exit_error();
+		exit_error(NULL, NULL);
 	push_swap(&a, &b);
 	stack_clear(&a);
 	stack_clear(&b);
