@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:45:02 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 15:17:04 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/03 18:42:59 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	display_instruction(t_stack *a, t_stack *b, char *line, int flag)
 		reverse_rotate(a, NULL, AFLAG);
 	else if (!ft_strcmp(line, "rrb"))
 		reverse_rotate(b, NULL, BFLAG);
+	if (flag & AFLAG)
+		flag ^= AFLAG;
+	if (flag & BFLAG)
+		flag ^= BFLAG;
 	if (flag & VFLAG)
 		display_process(a, b, line, flag);
 }
