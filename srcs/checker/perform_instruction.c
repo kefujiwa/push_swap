@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:40:18 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/02 18:09:45 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/03 19:09:26 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,22 +45,22 @@ int			perform_instruction(t_stack *a, t_stack *b, int flag)
 	char	*line;
 	int		ret;
 
-	flag |= VALID;
 	if (flag & VFLAG)
 		display_process(a, b, NULL, flag);
-	while ((ret = get_next_line(0, &line)) > 0)
+	while ((ret = get_next_instruction(&line, NORMAL)) > 0)
 	{
 		if (!check_instruction(a, b, line))
 		{
-			flag = INVALID;
-			break ;
+			free(line);
+			get_next_instruction(NULL, FREE);
+			return (INVALID);
 		}
 		if (flag & VFLAG)
 			display_process(a, b, line, flag);
 		free(line);
 	}
 	free(line);
-	if (flag == INVALID || ret == -1)
+	if (ret == -1)
 		return (INVALID);
 	return (VALID);
 }
