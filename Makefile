@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/04/02 16:41:19 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/04/03 14:08:04 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,10 +68,13 @@ LIBFT_DIR			= libft/
 
 # Files #
 UT_FILES			= build_stack \
+					  display_process \
 					  exit_error \
 					  is_colored \
+					  is_option \
 					  is_sorted \
 					  is_valid_args \
+					  parse_option \
 					  push \
 					  reverse_rotate \
 					  rotate \
@@ -80,15 +83,13 @@ UT_FILES			= build_stack \
 UT_SRCS				= $(addprefix $(UT_DIR), $(addsuffix .c, $(UT_FILES)))
 
 CH_FILES			= checker \
-					  display_process \
-					  is_option \
 					  output_result \
-					  parse_option \
 					  perform_instruction
 CH_SRCS				= $(addprefix $(CH_DIR), $(addsuffix .c, $(CH_FILES))) \
 					  $(UT_SRCS)
 
 PS_FILES			= create_partition \
+					  display_instruction \
 					  get_median \
 					  get_partition_end \
 					  initial_solver \

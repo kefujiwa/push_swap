@@ -6,26 +6,26 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 17:17:01 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/01 18:07:26 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/03 13:49:52 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	partition_solver_a(t_stack *a, t_stack *b)
+void	partition_solver_a(t_stack *a, t_stack *b, int flag)
 {
-	t_partition	p;
+	t_solver	s;
 	t_dlist		*next;
 
-	p.size = (int)a->partition->content;
-	while (p.size > 2 && !is_sorted(a, get_partition_end(a), ASC))
+	s.size = (int)a->partition->content;
+	while (s.size > 2 && !is_sorted(a, get_partition_end(a), ASC))
 	{
-		p.median = get_median(a, p.size);
-		p.total = p.size / 2;
-		create_partition(a, b, &p, AFLAG);
+		s.median = get_median(a, s.size);
+		s.total = s.size / 2;
+		create_partition(a, b, &s, flag | AFLAG);
 	}
 	if ((int)a->first->content > (int)a->first->next->content)
-		swap(a, NULL, AFLAG);
+		display_instruction(a, b, "sa", flag);
 	next = a->partition->next;
 	ft_dlstdelone(a->partition, NULL);
 	a->partition = next;

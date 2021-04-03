@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:24:15 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/01 18:12:40 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/03 14:07:22 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,28 @@
 /*
 ** STRUCTURE
 */
-typedef struct	s_partition
+typedef struct	s_solver
 {
 	int	size;
 	int	median;
 	int	total;
 	int	i;
 	int	j;
-}				t_partition;
+}				t_solver;
 
 /*
 ** PROTOTYPE DECLARATION
 */
 void			create_partition(t_stack *x, t_stack *y,
-									t_partition *p, int flag);
+											t_solver *s, int flag);
+void			display_instruction(t_stack *a, t_stack *b,
+											char *line, int flag);
 int				get_median(t_stack *st, int size);
 t_dlist			*get_partition_end(t_stack *st);
-void			initial_solver(t_stack *a, t_stack *b);
-void			partition_solver_a(t_stack *a, t_stack *b);
-void			partition_solver_b(t_stack *a, t_stack *b);
-void			sort_u3(t_stack *a);
+void			initial_solver(t_stack *a, t_stack *b, int flag);
+void			partition_solver_a(t_stack *a, t_stack *b, int flag);
+void			partition_solver_b(t_stack *a, t_stack *b, int flag);
+void			sort_u3(t_stack *a, t_stack *b, int flag);
 void			quick_sort (int *array, int left, int right);
 
 #endif
