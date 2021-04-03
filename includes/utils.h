@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 15:52:32 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/03 19:46:32 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ typedef struct	s_stack
 */
 int				build_stack(t_stack *a, t_stack *b, char **argv);
 void			display_process(t_stack *a, t_stack *b, char *line, int flag);
-void			exit_error(t_stack *a, t_stack *b);
+void			exit_error(t_stack *a, t_stack *b, int flag);
 int				is_colored(int row, char *line, int flag);
 int				is_sorted(t_stack *st, t_dlist *last, int flag);
 int				is_valid_args(char **argv);
