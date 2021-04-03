@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:24:15 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 14:07:22 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/03 15:52:47 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void			display_instruction(t_stack *a, t_stack *b,
 int				get_median(t_stack *st, int size);
 t_dlist			*get_partition_end(t_stack *st);
 void			initial_solver(t_stack *a, t_stack *b, int flag);
+int				is_option(char *str);
+int				parse_option(int *flag, char **argv);
 void			partition_solver_a(t_stack *a, t_stack *b, int flag);
 void			partition_solver_b(t_stack *a, t_stack *b, int flag);
 void			sort_u3(t_stack *a, t_stack *b, int flag);
