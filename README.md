@@ -30,7 +30,7 @@ At the end, stack b must be empty and all integers must be in stack a, sorted in
 
 ## Getting Started
 ```bash
-git clone https://github.com/kefujiwa/push_swap.git
+git clone --recurse-submodules https://github.com/kefujiwa/push_swap.git
 cd push_swap
 make all
 ```
@@ -52,4 +52,7 @@ ARG=`jot -r -s " " 100 -2147483648 2147483647`
 
 # use -c option if you want to color the last operation.
 ./push_swap `echo $ARG` | ./checker -c `echo $ARG`
+
+# use -a option if you want to see the result in ascii art.
+./push_swap `echo $ARG` | ./checker -a `echo $ARG`
 ```
