@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 23:57:28 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 19:30:31 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/07 01:45:49 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int			main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 
+	flag = PUSH_SWAP;
 	if (argc == 1)
 		return (EXIT_SUCCESS);
 	if (!parse_option(&flag, ++argv))

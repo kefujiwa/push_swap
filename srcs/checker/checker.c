@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 19:30:16 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/07 01:45:38 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int			main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 
+	flag = CHECKER;
 	if (argc == 1)
 		return (EXIT_SUCCESS);
 	if (!parse_option(&flag, ++argv))

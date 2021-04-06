@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/06 14:52:28 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/07 01:42:00 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,17 @@
 # define DESC 0x10
 
 /*
+** MACRO DECLARATION - PROGRAM
+*/
+# define CHECKER 0x20
+# define PUSH_SWAP 0x40
+
+/*
 ** MACRO DECLARATION - OPTION
 */
-# define VFLAG 0x20
-# define CFLAG 0x40
-# define ART 0x80
+# define VFLAG 0x80
+# define CFLAG 0x100
+# define ART 0x200
 
 /*
 ** MACRO DECLARATION - ESCAPE SEQUENCE
@@ -71,7 +77,7 @@
 # define BGREEN  "\x1b[42m"
 # define BYELLOW "\x1b[43m"
 # define BBLUE   "\x1b[44m"
-# define BWHITE   "\x1b[47m"
+# define BWHITE  "\x1b[47m"
 
 /*
 ** STRUCTURE

@@ -6,18 +6,28 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 12:11:08 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 15:44:45 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/07 00:40:30 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	put_illegal(char c)
+static int	put_illegal(char c, int flag)
 {
-	ft_putstr_fd("checker: illegal option -- ", STDERR_FILENO);
-	ft_putchar_fd(c, STDERR_FILENO);
-	ft_putchar_fd('\n', STDERR_FILENO);
-	ft_putendl_fd("usage: checker [-acv] [integer ...]", STDERR_FILENO);
+	if (flag & CHECKER)
+	{
+		ft_putstr_fd("checker: illegal option -- ", STDERR_FILENO);
+		ft_putchar_fd(c, STDERR_FILENO);
+		ft_putchar_fd('\n', STDERR_FILENO);
+		ft_putendl_fd("usage: checker [-acv] [integer ...]", STDERR_FILENO);
+	}
+	else if (flag & PUSH_SWAP)
+	{
+		ft_putstr_fd("push_swap: illegal option -- ", STDERR_FILENO);
+		ft_putchar_fd(c, STDERR_FILENO);
+		ft_putchar_fd('\n', STDERR_FILENO);
+		ft_putendl_fd("usage: push_swap [-acv] [integer ...]", STDERR_FILENO);
+	}
 	return (INVALID);
 }
 
@@ -25,7 +35,6 @@ int			parse_option(int *flag, char **argv)
 {
 	char	*str;
 
-	*flag = 0;
 	while (argv && *argv && **argv == '-')
 	{
 		str = *argv + 1;
@@ -40,7 +49,7 @@ int			parse_option(int *flag, char **argv)
 			else if (*str == 'a')
 				*flag |= ART;
 			else
-				return (put_illegal(*str));
+				return (put_illegal(*str, *flag));
 			str++;
 		}
 		argv++;
