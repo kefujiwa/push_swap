@@ -6,13 +6,13 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:08:30 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/07 01:45:38 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/07 01:46:45 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int		flag;
 	t_stack	a;

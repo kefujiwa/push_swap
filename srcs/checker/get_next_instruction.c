@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 18:52:16 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 19:20:40 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/07 01:29:12 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	init(char **buf, char **str)
 {
-	*buf = (char*)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	*buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!(*buf))
 		return (0);
 	if (!(*str))
