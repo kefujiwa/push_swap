@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 02:26:23 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 19:46:32 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/06 14:52:28 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,10 @@ int				build_stack(t_stack *a, t_stack *b, char **argv);
 void			display_process(t_stack *a, t_stack *b, char *line, int flag);
 void			exit_error(t_stack *a, t_stack *b, int flag);
 int				is_colored(int row, char *line, int flag);
+int				is_option(char *str);
 int				is_sorted(t_stack *st, t_dlist *last, int flag);
 int				is_valid_args(char **argv);
+int				parse_option(int *flag, char **argv);
 int				push(t_stack *dst, t_stack *src, int flag);
 int				reverse_rotate(t_stack *st1, t_stack *st2, int flag);
 int				rotate(t_stack *st1, t_stack *st2, int flag);

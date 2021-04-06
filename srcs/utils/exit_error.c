@@ -6,7 +6,7 @@
 /*   By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 01:56:00 by kefujiwa          #+#    #+#             */
-/*   Updated: 2021/04/03 20:08:03 by kefujiwa         ###   ########.fr       */
+/*   Updated: 2021/04/04 15:08:10 by kefujiwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ static void	put_black_white_err(void)
 
 static void	put_colored_err(void)
 {
-	ft_putendl_fd(
-			YELLOW"███████╗██████╗ ██████╗  ██████╗ ██████╗ "RESET,STDERR_FILENO);
-	ft_putendl_fd(
-			YELLOW"██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗"RESET,STDERR_FILENO);
-	ft_putendl_fd(
-			YELLOW"█████╗  ██████╔╝██████╔╝██║   ██║██████╔╝"RESET,STDERR_FILENO);
-	ft_putendl_fd(
-			YELLOW"██╔══╝  ██╔══██╗██╔══██╗██║   ██║██╔══██╗"RESET,STDERR_FILENO);
-	ft_putendl_fd(
-			YELLOW"███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║"RESET,STDERR_FILENO);
-	ft_putendl_fd(
-			YELLOW"╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝"RESET,STDERR_FILENO);
+	ft_putendl_fd(YELLOW"███████╗██████╗ ██████╗  ██████╗ ██████╗ "RESET,
+			STDERR_FILENO);
+	ft_putendl_fd(YELLOW"██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗"RESET,
+			STDERR_FILENO);
+	ft_putendl_fd(YELLOW"█████╗  ██████╔╝██████╔╝██║   ██║██████╔╝"RESET,
+			STDERR_FILENO);
+	ft_putendl_fd(YELLOW"██╔══╝  ██╔══██╗██╔══██╗██║   ██║██╔══██╗"RESET,
+			STDERR_FILENO);
+	ft_putendl_fd(YELLOW"███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║"RESET,
+			STDERR_FILENO);
+	ft_putendl_fd(YELLOW"╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝"RESET,
+			STDERR_FILENO);
 }
 
 void	exit_error(t_stack *a, t_stack *b, int flag)
