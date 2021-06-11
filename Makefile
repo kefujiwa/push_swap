@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/06/11 17:14:46 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/06/11 17:43:18 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,10 +149,8 @@ $(PUSH_SWAP):		$(LIBFT_NAME) $(OBJS_DIR) $(PS_OBJS)
 						@$(CC) $(CFLAGS) -I $(HEADER_DIR) $(PS_OBJS) $(LIBFT_NAME) -o $(PUSH_SWAP)
 						@echo "\n\n$(_GREEN)Executable '$(PUSH_SWAP)' created.\n$(_RESET)"
 
-$(LIBFT_NAME):		FORCE
+$(LIBFT_NAME):
 						@$(MAKE) -C $(LIBFT_DIR)
-
-FORCE:
 
 # Compiled Source Files #
 $(OBJS_DIR)%.o: 	$(SRCS_DIR)%.c
