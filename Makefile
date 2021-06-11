@@ -6,7 +6,7 @@
 #    By: kefujiwa <kefujiwa@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 01:31:21 by kefujiwa          #+#    #+#              #
-#    Updated: 2021/04/04 14:37:18 by kefujiwa         ###   ########.fr        #
+#    Updated: 2021/06/11 17:14:46 by kefujiwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -141,11 +141,11 @@ test:				fclean all
 						@bash ./test/grademe.sh	
 
 # Variable Rules #
-$(CHECKER):			$(LIBFT_NAME) $(CH_OBJS)
+$(CHECKER):			$(LIBFT_NAME) $(OBJS_DIR) $(CH_OBJS)
 						@$(CC) $(CFLAGS) -I $(HEADER_DIR) $(CH_OBJS) $(LIBFT_NAME) -o $(CHECKER)
 						@echo "\n\n$(_GREEN)Executable '$(CHECKER)' created.\n$(_RESET)"
 
-$(PUSH_SWAP):		$(LIBFT_NAME) $(PS_OBJS)
+$(PUSH_SWAP):		$(LIBFT_NAME) $(OBJS_DIR) $(PS_OBJS)
 						@$(CC) $(CFLAGS) -I $(HEADER_DIR) $(PS_OBJS) $(LIBFT_NAME) -o $(PUSH_SWAP)
 						@echo "\n\n$(_GREEN)Executable '$(PUSH_SWAP)' created.\n$(_RESET)"
 
@@ -155,9 +155,6 @@ $(LIBFT_NAME):		FORCE
 FORCE:
 
 # Compiled Source Files #
-$(CH_OBJS):			$(OBJS_DIR)
-$(PS_OBJS):			$(OBJS_DIR)
-
 $(OBJS_DIR)%.o: 	$(SRCS_DIR)%.c
 						@printf "$(_YELLOW)Generating push_swap objects... %-33.33s\r$(_RESET)" $@
 						@$(CC) $(CFLAGS) -I $(HEADER_DIR) -c $< -o $@
